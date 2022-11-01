@@ -10,22 +10,116 @@
  */
 
 ?>
-
+<?php
+global $phone,$phone_link;
+?>
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'sabel-mechanical' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'sabel-mechanical' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'sabel-mechanical' ), 'sabel-mechanical', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
+	<div class="footer-top back-img" style="background-image:url('<?php the_field('footer_background_image','options'); ?>');">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="footer-info">
+						<div class="footer-branding">
+							<a href="<?php echo home_url(); ?>" title="Sabel Mechanical"><img src="<?php the_field('logo','options'); ?>" alt="Sabel Mechanical" width="315" height="152"></a>
+						</div>
+						<p><?php the_field('footer_content','options'); ?></p>
+						<div class="branding-icons">
+						<?php
+						if(have_rows('brand_logo','options')):
+							while(have_rows('brand_logo','options')): the_row();
+							$brand_image = get_sub_field('brand_logo_image','options');
+								if(!empty($brand_image)):
+						?>
+								<a href="#" title="bbb-logo"><img src="<?php echo $brand_image; ?>" alt="Sabel Mechanical" width="59" height="44"></a>
+						<?php
+								endif;
+							endwhile;
+						endif;
+						?>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-5 offset-lg-1">
+					<div class="footer-contact-detail">
+						<div class="social-box">
+							<div class="social-icon">
+							<i class="fas fa-map-marker-alt"></i>
+							</div>
+							<?php
+							$address = get_field('address','options');
+							$address_title = strip_tags($address);
+							?>
+							<div class="social-info address">
+								<span class="title">Address:</span>
+								<a href="<?php the_field('address_link','options'); ?>" title="<?php echo $address_title; ?>" target="_blank" ><?php echo $address; ?></a>
+							</div>
+						</div>
+						<div class="social-box">
+							<div class="social-icon">
+							<i class="fas fa-envelope"></i>
+							</div>
+							<div class="social-info">
+								<a href="mailto:<?php the_field('email','options'); ?>" title="<?php the_field('email','options'); ?>"><?php the_field('email','options'); ?></a>
+							</div>
+						</div>
+						<div class="social-box">
+							<div class="social-icon">
+							<i class="fas fa-phone-alt"></i>
+							</div>
+							<div class="social-info">
+								<a href="tel:+<?php echo $phone_link; ?>" title="<?php echo $phone; ?>"><span class="callus"><?php echo $phone; ?></span></a>
+							</div>
+						</div>
+						<div class="social-box">
+							<div class="social-icon face-book">
+							 <a href="<?php the_field('facebook_link','options'); ?>" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="footer-bottom-box">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12">
+					<div class="footer-bottom-text">
+						<div class="copy-right">
+							<p>© <?php echo date('Y');?> Sabel Mechanical</p>
+						</div>
+						<div class="footer-bottom-link">
+							<ul>
+								<li><a href="<?php echo home_url();?>/privacy-policy" title="Privacy Policy">Privacy Policy</a></li>
+								<li><a href="<?php echo home_url();?>/terms-of-use" title="Terms of Service">Terms of Use</a></li>
+								<li><a href="<?php echo home_url();?>/cookie-policy" title="Cookies Policy">Cookie Policy</a></li>
+							</ul>
+						</div>
+						<div class="footer-other-link">
+							<p>Website Design, SEO, & Online Marketing by<a href="https://www.dotcomdesign.com" target="_blank" title="Dotcom Design" class="dotcom-link"> Dotcom Design</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	</footer><!-- #colophon -->
+		<!-- CTA  Button Start -->
+		<div class="cta-btn">
+			<span>Call now</span>
+			<div class="social-box">
+				<div class="social-icon">
+					<i class="fas fa-phone-alt"></i>
+					</div>
+					<div class="social-info">
+						<a href="tel:++<?php echo $phone_link; ?>" title="<?php echo $phone; ?>" ><span class="callus"><?php echo $phone; ?></span></a>
+					</div>
+
+			</div>
+    </div>
+    <!-- CTA  Button Start -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

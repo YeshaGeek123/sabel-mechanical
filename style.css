@@ -1043,7 +1043,7 @@ span.wpcf7-not-valid-tip {
 
 .wpcf7-form-control-wrap {
     display: block;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     position: relative;
 }
 
@@ -1142,9 +1142,9 @@ select {
     font-size: 16px;
     line-height: 26px;
     color: var(--dark-color);
-    background: var(--white-color);
+    background: #F7F7F7;
     -webkit-appearance: none;
-    border-radius: 10px;
+    border-radius: 14px !important;
 }
 
 select,
@@ -1823,12 +1823,13 @@ button.close:hover {
     line-height: 1;
     bottom: -50px;
     left: -80px;
+    margin: 0 15px;
 }
 
 .slick-dots li {
     width: auto;
     height: auto;
-    margin: 0 15px 0 0;
+    margin: 0 10px 0 0;
 }
 
 .slick-dots li:last-child {
@@ -2413,6 +2414,7 @@ a.sec-btn+.sec-btn:hover {
     height: 7px;
     background-color: var(--primary-color);
     border-radius: 4px;
+    transition: 0.3s;
 }
 
 .service-menu .slick-active {
@@ -2444,6 +2446,7 @@ a.sec-btn+.sec-btn:hover {
     position: relative;
     margin-top: 80px;
     z-index: 5;
+    padding-left: 20px;
 }
 
 .service-menu {
@@ -2481,6 +2484,16 @@ ul.dropdown-tabbing {
     display: flex;
     justify-content: center;
     text-align: center;
+}
+
+.service-menu ul li.slick-active {
+    opacity: 1;
+    background: transparent;
+    color: var(--white-color);
+}
+
+.service-menu ul li.slick-active:before {
+    width: 100%;
 }
 
 
@@ -2543,7 +2556,7 @@ ul.dropdown-tabbing {
 }
 
 .testimonial-slider .slide-arrow.next-arrow.slick-arrow {
-    left: 170px;
+    left: 200px;
 }
 
 .gallery-img .back-img {
@@ -2551,7 +2564,135 @@ ul.dropdown-tabbing {
 }
 
 
+/*================ career css start =================*/
+
+.career-info {
+    text-align: center;
+}
+
+.career {
+    position: relative;
+    padding: 100px 0;
+    clip-path: ellipse(calc(100% + 50px)100% at 50% 100%);
+    margin-top: -65px;
+}
+
+.career:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #7B0000;
+    opacity: 0.80;
+}
+
+.career-info p {
+    color: var(--white-color);
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+.career .service-btn .sec-btn:hover,
+.testimonial .service-btn .sec-btn:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+
+/*================ career css end =================*/
+
+
 /*==========Footer CSS Start==========*/
+
+.footer-top {
+    position: relative;
+    padding: 140px 0 100px 0;
+}
+
+.footer-top:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #141414;
+    opacity: 0.92;
+}
+
+.footer-info p {
+    color: var(--white-color);
+}
+
+.footer-branding {
+    margin-bottom: 42px;
+}
+
+.branding-icons {
+    margin-top: 30px;
+}
+
+.footer-info {
+    width: 430px;
+}
+
+.branding-icons a {
+    margin-right: 8px;
+}
+
+.social-box {
+    display: flex;
+    margin-bottom: 60px;
+}
+
+.social-icon {
+    margin-right: 15px;
+    width: 15px;
+    height: 15px;
+}
+
+span.title {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    color: var(--input-color) !important;
+}
+
+.social-icon.face-book a {
+    font-size: 16px;
+    width: 36px;
+    height: 36px;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.social-icon.face-book a:hover {
+    background-color: var(--primary-color);
+    font-size: 19px;
+}
+
+.social-info p,
+.social-info a,
+.social-info span {
+    color: var(--white-color);
+    margin-bottom: 0;
+    display: block;
+}
+
+.footer-contact-detail {
+    margin-top: 30px;
+    margin-left: 100px;
+}
+
+.social-info a {
+    font-weight: bold;
+}
 
 .footer-bottom-box {
     position: relative;
@@ -2590,11 +2731,11 @@ ul.dropdown-tabbing {
 
 .footer-bottom-link ul li {
     font-size: 14px;
-    line-height: 24px;
+    line-height: 20px;
     display: inline-block;
     padding-right: 8px;
     margin-right: 8px;
-    border-right: 1px solid var(--common-color);
+    border-right: 1px solid var(--input-color);
 }
 
 .footer-bottom-link ul li:last-child {
@@ -2606,7 +2747,7 @@ ul.dropdown-tabbing {
 .footer-bottom-link ul li a {
     font-size: 14px;
     line-height: 24px;
-    color: var(--common-color);
+    color: var(--input-color);
     transition: 0.3s;
 }
 
@@ -2618,6 +2759,7 @@ ul.dropdown-tabbing {
     color: var(--primary-color);
     font-weight: bold;
     transition: 0.3s;
+    text-decoration: none !important;
 }
 
 .footer-other-link p a:hover {
@@ -2628,8 +2770,305 @@ ul.dropdown-tabbing {
     color: var(--primary-color);
 }
 
+.branding-icons img {
+    width: auto;
+}
+
+.social-info.address a {
+    font-weight: normal;
+}
+
+.cta-btn {
+    width: 168px;
+    height: 64px;
+    background-color: var(--primary-color);
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    z-index: 99;
+    right: -52px;
+    transform: rotate(-90deg);
+    padding: 10px;
+}
+
+.cta-btn span {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #7B0000;
+}
+
+.cta-btn .social-icon {
+    margin-right: 10px;
+    color: #7b0000;
+}
+
+.address a {
+    width: 250px;
+    max-width: 100%;
+}
+
+.cta-btn span.callus {
+    color: var(--white-color);
+    font-size: 15px;
+}
+
+.footer-top:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 65%;
+    height: 10px;
+    background-color: var(--secondary-color);
+}
+
 
 /*==========Footer CSS End==========*/
+
+
+/*==========inner pages  CSS start==========*/
+
+.inner-banner {
+    padding-top: 245px;
+    padding-bottom: 80px;
+    background-color: #F7F7F7;
+}
+
+.inner-banner .h1-title {
+    font-size: 50px;
+}
+
+.service-page-detail {
+    padding: 180px 0 100px 0;
+    background-color: #F7F7F7;
+    margin-top: -70px;
+}
+
+.service-page-info {
+    position: relative;
+    margin-top: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.service-page-info p {
+    font-size: 18px;
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+.service-page-content a {
+    font-weight: bold;
+}
+
+.service-page-content {
+    padding-right: 40px;
+}
+
+.service-page-info:before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 100px;
+    width: 100px;
+    height: 12px;
+    background-color: var(--bg-color);
+}
+
+.service-box-img {
+    height: 350px;
+}
+
+.service-box-info {
+    position: relative;
+    padding: 70px 60px;
+    text-align: center;
+    background-color: var(--white-color);
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgb(0 0 0 / 10%);
+    margin-top: -45px;
+    flex: 1;
+}
+
+.service-box-info ul {
+    column-count: 2;
+    text-align: left;
+}
+
+.service-page-list {
+    background-color: #F7F7F7;
+    padding-bottom: 60px;
+}
+
+.service-page-box .h2-title {
+    font-size: 21px;
+    line-height: 35px;
+    margin-bottom: 0;
+    padding: 0px;
+}
+
+.service-box-info p {
+    margin-top: 15px;
+}
+
+.service-page-box {
+    --service-bottom-space: 30px;
+    position: relative;
+    margin-bottom: var(--service-bottom-space);
+    height: calc(100% - var(--service-bottom-space));
+    display: flex;
+    flex-direction: column;
+}
+
+.our-client-list {
+    position: relative;
+    background-color: #f7f7f7;
+}
+
+.client-list-box {
+    background-color: var(--white-color);
+    border-radius: 26px;
+    padding: 75px 100px;
+}
+
+.client-list-box:before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 100px;
+    width: 12px;
+    height: 100px;
+    background-color: var(--bg-color);
+}
+
+section.our-client-list.equipment-offering-list ul {
+    column-count: 1;
+}
+
+section.our-client-list.equipment-offering-list .client-list-box:before {
+    width: 100px;
+    height: 12px;
+    top: 80px;
+    left: -30px;
+}
+
+.list-title p,
+.gallery-list-text p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.client-list ul {
+    column-count: 3;
+}
+
+.list-title {
+    margin-bottom: 40px;
+    padding: 0 260px;
+}
+
+.client-list ul li,
+.service-box-info ul li {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+.service-box-info ul li {
+    margin-bottom: 10px;
+}
+
+.client-list ul li:before,
+.service-box-info ul li:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -4px;
+    width: 7px;
+    height: 7px;
+    background-color: var(--input-color);
+    border-radius: 15px;
+}
+
+.gallery-list-text {
+    margin: 50px 0 105px 0;
+}
+
+.gallery-list .service-box-info {
+    height: 450px;
+}
+
+.gallery-list {
+    background: #f7f7f7;
+}
+
+.page-template-template-cake-sluge-hauling .service-page-content {
+    padding-left: 100px;
+}
+
+.service-page-img.back-img {
+    height: 310px;
+    margin-left: 100px;
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgb(0 0 0 / 10%);
+}
+
+section.inner-banner.contact-page-detail .service-page-info {
+    padding-left: 0;
+    padding-right: 50px;
+}
+
+.contact-page-detail .footer-contact-detail {
+    margin-left: 0;
+    margin-top: 50px;
+}
+
+.contact-page-detail .social-info p,
+.contact-page-detail .social-info a,
+.contact-page-detail .social-info span {
+    color: var(--input-color);
+}
+
+.contact-page-detail .h2-title {
+    color: var(--dark-color);
+    padding: 0;
+    padding-left: 100px;
+    margin-bottom: 70px;
+}
+
+.contact-page-detail .h2-title:before {
+    display: none;
+}
+
+.contact-page-detail .service-page-info:before {
+    left: 0;
+}
+
+.contact-form {
+    position: relative;
+    padding: 50px;
+    background-color: var(--white-color);
+    border-radius: 26px;
+    margin-top: -40px;
+    margin-left: 70px;
+}
+
+button.sec-btn.sm-btn {
+    width: 200px;
+    height: 50px;
+}
+
+button.sec-btn.sm-btn:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+
+/*==========inner pages  CSS End==========*/
 
 
 /*==========Scroll To Top CSS Start==========*/

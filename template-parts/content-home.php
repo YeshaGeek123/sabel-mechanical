@@ -1,9 +1,6 @@
 <!-- banner sec start -->
 <?php
-$phone = get_field('phone_number','option');
-$val = array("(", ")", " ", "-", ".");
-$replace = array("", "", "", "", "");
-$phone_link = str_replace($val, $replace, $phone);
+global $phone,$phone_link;
 ?>
 <section class="banner-sec back-img"style="background-image: url('<?php the_field('home_banner_image'); ?>');">
     <div class="container">
@@ -23,7 +20,7 @@ $phone_link = str_replace($val, $replace, $phone);
 </section>
 <!-- banner sec end -->
 <!-- about sec start -->
-<section class="about">
+<section class="about" id="aboutus">
     <div class="container">
         <div class="row">
             <div class="col-lg-7">
@@ -64,7 +61,7 @@ $phone_link = str_replace($val, $replace, $phone);
 </section>
 <!-- about sec end -->
 <!-- service sec start -->
-<section class="service">
+<section class="service" id="service">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -91,6 +88,7 @@ $phone_link = str_replace($val, $replace, $phone);
                 $service_title = get_sub_field('service_list_title');
                 $service_content = get_sub_field('service_list_content');
                 $service_page_link = get_sub_field('service_list_page_link');
+                $read_more_title = strip_tags( $service_title );
             ?>
                 <div class="service-box">
                     <div class="row">
@@ -116,7 +114,7 @@ $phone_link = str_replace($val, $replace, $phone);
                                 if(!empty($service_page_link)):
                                 ?>
                                     <div class="service-btn">
-                                        <a href="<?php echo $service_page_link; ?>" title="read more" class="sec-btn" tabindex="0">read more </a>
+                                        <a href="<?php echo $service_page_link; ?>" title="<?php echo $read_more_title; ?>, Read More" class="sec-btn" tabindex="0">Read more </a>
                                     </div>
                                 <?php
                                 endif;
@@ -153,8 +151,8 @@ $phone_link = str_replace($val, $replace, $phone);
         <div class="row">
             <div class="col-xl-5 col-lg-5">
                 <div class="testimonial-info">
-                    <h2 class="h2-title">Testimonials</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor andin incididunt ut labore et dolore magna.</p>
+                    <h2 class="h2-title"><?php the_field('home_testimonial_title'); ?></h2>
+                    <?php the_field('home_testimonial_content'); ?>
                     <div class="service-btn">
                         <a href="#" title="leave a review" class="sec-btn">leave a review </a>
                     </div>
@@ -162,14 +160,24 @@ $phone_link = str_replace($val, $replace, $phone);
             </div>
             <div class="col-xl-4">
                 <div class="testimonial-slider">
-                    <div class="testimonial-content">
-                        <p>Great staff. I was there this morning delivering some bearings, and they really helped me a lot. Thanks guys.</p>
-                        <span>Emerson Santos</span>
-                    </div>
-                    <div class="testimonial-content">
-                        <p>Great staff. I was there this morning delivering some bearings, and they really helped me a lot. Thanks guys.</p>
-                        <span>Emerson Santos</span>
-                    </div>
+                <?php
+                    $testimonial_list = get_posts(array(
+                        'post_type' => 'testimonials',
+                        'post_status' => 'publish',
+                        'order'          => 'ASC',
+                        'posts_per_page' => -1
+                    ));
+                    if ($testimonial_list) :
+                        foreach ($testimonial_list as $testimonial) :
+                ?>
+                        <div class="testimonial-content">
+                            <p><?php echo $testimonial->post_content; ?></p>
+                            <span><?php echo $testimonial->post_title; ?></span>
+                        </div>
+                <?php
+                        endforeach;
+                    endif;
+                ?>
                 </div>
             </div>
         </div>
@@ -177,7 +185,30 @@ $phone_link = str_replace($val, $replace, $phone);
 </section>
 <!-- testimonial sec end -->
 
+<!-- Gallery Start -->
+<section class="gallery">
+    <div class="gallery-slider gallery-box">
+        <?php
+        $gallery_image = get_field('gallery_images');
+        if (isset($gallery_image) && !empty($gallery_image)) :
+            $counter = 1;
+            foreach ($gallery_image as $key => $image) :
+        ?>
+            <div class="gallery-img">
+                <a href="<?php echo $image['url']; ?>" title="Gallery Image <?php echo $counter++; ?>" data-fancybox="gallery-images" >
+                    <div class="back-img" style="background-image:url('<?php echo $image['url']; ?>');"> </div>
+                </a>
+            </div>
+        <?php
+            endforeach;
+        endif;
+        ?>
+       
+    </div>
+</section>
+<!-- Gallery End -->
+
 <?php
-	get_template_part( 'template-parts/content', 'gallery' );		
+	get_template_part( 'template-parts/content', 'career' );		
 ?>
 

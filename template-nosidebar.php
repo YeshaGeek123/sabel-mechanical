@@ -4,17 +4,19 @@
  */
   get_header();
 ?>
-<section class="main-banner inner-banner" style=" background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2020/05/InteriorHeaderImage.jpg');">
+<section class="inner-banner banner-sec back-img"style="background-image: url('http://192.168.1.13/sabel-mechanical/wp-content/uploads/2022/11/service-banner-bg.jpg');">
     <div class="container">
         <div class="row">
-            <div class="col-lg-9">
-                <div class="banner-text">
-                    <h1 class="h1-title"><?php the_title(); ?></h1>
+            <div class="col-lg-12">
+                <div class="banner-content">
+                <h1 class="h1-title"><?php the_title(); ?></h1>
                 </div>
             </div>
         </div>
     </div>
-</section><!-- emd of main-banner -->
+
+</section>
+
 
 <div class="inner-page-text">
     <div class="container">
@@ -27,7 +29,7 @@
                             the_post();
                             ?>
                             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                
+
                                 <?php sabel_mechanical_post_thumbnail(); ?>
                                 <div class="entry-content">
                                     <?php
@@ -41,12 +43,12 @@
                                             )
                                         ), get_the_title()
                                     ));
-                           
+
                                     ?>
                                 </div><!-- .entry-content -->
                             </article><!-- #post-the_ID(); -->
                             <?php
-                           
+
                         endwhile; // End of the loop.
                         ?>
                     </main><!-- #main -->

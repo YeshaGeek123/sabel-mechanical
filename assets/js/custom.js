@@ -54,7 +54,7 @@ jQuery(document).ready(function($) {
         slidesToScroll: 1,
         infinite: true,
         swipeToSlide: true,
-        rows:0,
+        rows: 0,
         dots: true,
         arrows: true,
         autoplay: true,
@@ -89,38 +89,36 @@ jQuery(document).ready(function($) {
         ]
     });
 
-    //Testimonial Slider
     jQuery('.testimonial-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        swipeToSlide: true,
-        infinite: true,
-        dots: true,
-        rows:0,
         arrows: true,
+        infinite: true,
         autoplay: true,
         autoplaySpeed: 4000,
-        prevArrow: '<button class="slide-arrow prev-arrow"></button>',
-        nextArrow: '<button class="slide-arrow next-arrow"></button>',
+        dots: true,
+        appendDots: jQuery(".slick-navigation"),
+        prevArrow: jQuery('.prev-arrow'),
+        nextArrow: jQuery('.next-arrow'),
         responsive: [{
             breakpoint: 992,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 infinite: true,
-                dots: false,
-                autoplay: true,
-                autoplaySpeed: 2000,
+                dots: true,
+                arrows: false,
             }
         }]
     });
 
+
     //Gallery Slider
     jQuery('.gallery-slider').slick({
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         infinite: true,
-        rows:0,
+        rows: 0,
         swipeToSlide: true,
         dots: false,
         arrows: false,

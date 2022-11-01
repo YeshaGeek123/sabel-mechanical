@@ -237,3 +237,29 @@ function change_html_custom_logo() {
     return $html;   
 }
 
+function global_variable_phone_number()
+{
+	global $phone,$phone_link;
+	$phone = get_field('phone_number','option');
+	$val = array("(", ")", " ", "-", ".");
+	$replace = array("", "", "", "", "");
+	$phone_link = str_replace($val, $replace, $phone);
+
+}
+add_action('init','global_variable_phone_number');
+
+// it's working only menu custom link and link have started with #
+function change_menu_URL($items){
+	global $wp;
+	$current_slug = $wp->request;
+		if(!is_front_page()){
+			foreach ($items as $key => $item) {
+				if ($item->object == 'custom' && substr($item->url, 0, 1) == '#') {
+					$item->url = site_url() . $item->url;
+				}
+			}
+		}
+		return $items;
+	}
+add_filter('wp_nav_menu_objects', 'change_menu_URL'); 
+

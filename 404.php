@@ -10,51 +10,27 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<section class="inner-banner banner-sec back-img"style="background-image: url('http://192.168.1.13/sabel-mechanical/wp-content/uploads/2022/11/service-banner-bg.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="banner-content">
+                    <h1 class="h1-title">oops! <span>page not found</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'sabel-mechanical' ); ?></h1>
-			</header><!-- .page-header -->
+</section>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'sabel-mechanical' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'sabel-mechanical' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$sabel_mechanical_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'sabel-mechanical' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$sabel_mechanical_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
-
+<div class="inner-page-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+            <img width="1200" height="937" src="<?php echo home_url(); ?>wp-content/themes/sabel-mechanical/assets/images/404.png" alt="404 Not Found!">
+            </div>
+        </div>
+    </div>
+</div>
 <?php
 get_footer();
