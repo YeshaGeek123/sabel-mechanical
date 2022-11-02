@@ -1603,8 +1603,8 @@ a:hover {
     left: 50%;
     transform: translate(-50%);
     float: none;
-    width: 233px;
-    background: var(--white-color);
+    width: 240px;
+    background: var(--bg-color);
     box-shadow: 0 0 10px rgb(60 140 244 / 15%);
     text-align: left;
     border-radius: 10px;
@@ -1633,7 +1633,7 @@ a:hover {
 .main-navigation ul ul li {
     display: block;
     margin: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
 .main-navigation ul ul li:last-child {
@@ -1643,13 +1643,14 @@ a:hover {
 
 .main-navigation ul ul li a {
     display: block;
-    padding: 6px 12px;
+    padding: 7px 15px;
     font-size: 16px;
     line-height: 26px;
     font-weight: normal;
     transition: 0.3s;
     color: var(--dark-color);
     text-transform: capitalize;
+    width: 100%;
 }
 
 .main-navigation ul ul li a:hover {
@@ -1794,6 +1795,11 @@ button.close:hover {
     overflow: auto;
     overflow-x: hidden;
     scrollbar-color: transparent transparent;
+}
+
+.common-popup-text .contact-form {
+    margin: 0;
+    padding: 0;
 }
 
 .common-popup-text::-webkit-scrollbar {
@@ -2205,9 +2211,9 @@ button.close:hover {
     content: "";
     position: absolute;
     bottom: 0;
-    height: calc(100% + 35px);
+    height: calc(100% + 45px);
     width: 100%;
-    background-color: var(--white-color);
+    background-color: var(--bg-color);
     border-radius: 15px;
 }
 
@@ -2294,7 +2300,7 @@ a.sec-btn+.sec-btn:hover {
 .about-image.back-img {
     position: relative;
     height: 1010px;
-    width: 55vw;
+    width: 60vw;
     float: right;
 }
 
@@ -2424,16 +2430,16 @@ a.sec-btn+.sec-btn:hover {
 }
 
 .service-menu .slick-active:before {
-    content: "";
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 15px;
-    height: 15px;
-    border-top: 14px solid var(--primary-color);
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
+    /* content: ""; */
+    /* position: absolute; */
+    /* bottom: -15px; */
+    /* left: 50%; */
+    /* transform: translate(-50%, 0); */
+    /* width: 15px; */
+    /* height: 15px; */
+    /* border-top: 14px solid var(--primary-color); */
+    /* border-left: 7px solid transparent; */
+    /* border-right: 7px solid transparent; */
 }
 
 .service-img .back-img {
@@ -2486,13 +2492,15 @@ ul.dropdown-tabbing {
     text-align: center;
 }
 
-.service-menu ul li.slick-active {
+.service-menu ul li.slick-active,
+.service-menu ul li:hover {
     opacity: 1;
     background: transparent;
     color: var(--white-color);
 }
 
-.service-menu ul li.slick-active:before {
+.service-menu ul li.slick-active:before,
+.service-menu ul li:hover:before {
     width: 100%;
 }
 
@@ -2561,6 +2569,39 @@ ul.dropdown-tabbing {
 
 .gallery-img .back-img {
     height: 443px;
+}
+
+.slick-slider-nav .slick-arrow {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    transform: none;
+    display: inline-block;
+}
+
+.slick-navigation .slick-dots {
+    position: relative;
+    display: inline-block;
+    left: 0;
+    bottom: 0;
+    width: auto;
+}
+
+.slick-navigation {
+    display: inline-block;
+}
+
+.slick-slider-nav .prevs-arrow.slick-arrow {
+    transform: rotate(180deg);
+}
+
+.slick-slider-nav {
+    padding-left: 30px;
+    margin-top: 60px;
+}
+
+.testimonial .h2-title:before {
+    background-color: #d4d4d4;
 }
 
 
@@ -2819,7 +2860,7 @@ span.title {
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    width: 65%;
+    width: calc(100% - 20vw);
     height: 10px;
     background-color: var(--secondary-color);
 }
@@ -2849,8 +2890,7 @@ span.title {
 .service-page-info {
     position: relative;
     margin-top: 20px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 0 100px;
 }
 
 .service-page-info p {
@@ -2879,6 +2919,7 @@ span.title {
 
 .service-box-img {
     height: 350px;
+    background-color: #252525;
 }
 
 .service-box-info {
@@ -2903,7 +2944,7 @@ span.title {
 }
 
 .service-page-box .h2-title {
-    font-size: 21px;
+    font-size: 25px;
     line-height: 35px;
     margin-bottom: 0;
     padding: 0px;
@@ -2954,6 +2995,10 @@ section.our-client-list.equipment-offering-list .client-list-box:before {
     left: -30px;
 }
 
+.equipment-offering-list .list-title p {
+    text-align: left;
+}
+
 .list-title p,
 .gallery-list-text p {
     text-align: center;
@@ -2967,8 +3012,9 @@ section.our-client-list.equipment-offering-list .client-list-box:before {
 }
 
 .list-title {
-    margin-bottom: 40px;
-    padding: 0 260px;
+    width: 470px;
+    max-width: 100%;
+    margin: 0 auto 40px auto;
 }
 
 .client-list ul li,
@@ -3754,9 +3800,53 @@ a.prev.page-numbers {
     }
 }
 
-@media screen and (max-width: 1499px) {}
+@media screen and (max-width: 1499px) {
+    .banner-sec {
+        clip-path: ellipse(calc(100% + 150px) 100% at 50% 0%);
+    }
+    .about-content {
+        width: calc(100% + 80px);
+        padding: 50px;
+    }
+    .owner {
+        padding: 100px 0 200px 0;
+    }
+    .owner-img.back-img {
+        margin-right: 50px;
+    }
+    .service {
+        clip-path: ellipse(calc(100% + 200px)100% at 50% 100%);
+    }
+    .service-img .back-img {
+        width: 100%;
+    }
+    .footer-contact-detail {
+        margin-left: 0;
+    }
+}
 
-@media screen and (max-width: 1199px) {}
+@media screen and (max-width: 1199px) {
+    .main-navigation ul li.header-logo {
+        width: 250px;
+        margin: 0 30px;
+    }
+    .h1-title {
+        font-size: 55px;
+        line-height: 65px;
+    }
+    .banner-sec {
+        padding-top: 300px;
+    }
+    .owner-img.back-img {
+        margin: 0;
+    }
+    .service-info {
+        padding-left: 0;
+    }
+    .gallery-img .back-img {
+        height: 350px;
+    }
+}
 
 @media screen and (max-width: 991px) {
     .for-des,
@@ -3778,6 +3868,49 @@ a.prev.page-numbers {
     }
     .menu-mob {
         display: block;
+    }
+    .header-mob-menu {
+        background-color: var(--secondary-color);
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        opacity: 0;
+        transition: 0.5s all;
+        padding: 16.3vh 30px 30px 30px;
+        display: flex;
+        justify-content: center;
+        z-index: 99;
+    }
+    .toggled .header-mob-menu {
+        opacity: 1;
+        top: 0;
+    }
+    .site-header:before {
+        height: 100px;
+    }
+    .header-call {
+        position: fixed;
+        top: 30px;
+        left: 30px;
+        font-size: 24px;
+    }
+    .header-call a {
+        color: var(--white-color);
+    }
+    .main-logo {
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 280px;
+    }
+    .main-navigation ul li.header-logo a {
+        display: none;
+    }
+    .main-navigation ul li.menu-item-has-children>a:before {
+        top: 13px;
     }
     .widget-area,
     .single-post .widget-area {
@@ -3813,13 +3946,14 @@ a.prev.page-numbers {
         display: block;
         width: 100%;
         height: 5px;
-        background: var(--primary-color);
+        background: var(--white-color);
         margin-bottom: 8px;
         border-radius: 0;
         position: relative;
         top: 0;
         opacity: 1;
         transition: 0.3s;
+        border-radius: 2px;
     }
     .menu-toggle span:last-child {
         margin: 0;
@@ -3865,7 +3999,7 @@ a.prev.page-numbers {
         background: var(--white-color);
     }
     .main-navigation ul {
-        text-align: left;
+        text-align: center;
         display: inline-block;
     }
     .main-navigation ul li {
@@ -3873,7 +4007,7 @@ a.prev.page-numbers {
         margin-left: 0;
         font-size: 22px;
         line-height: 28px;
-        margin-bottom: 4.4vh;
+        margin-bottom: 5vh;
     }
     .main-navigation ul li:last-child {
         margin-bottom: 0;
@@ -3899,7 +4033,6 @@ a.prev.page-numbers {
     .main-navigation ul li.menu-item-has-children:hover ul {
         display: block;
         top: 0;
-        left: 15px !important;
         position: relative;
         opacity: 1;
         animation: none;
@@ -3908,16 +4041,95 @@ a.prev.page-numbers {
         width: 100%;
         display: none;
         margin-top: 10px;
+        text-align: center;
     }
     .main-navigation ul ul li {
         border-bottom: none;
-        margin-bottom: 10px;
+        margin-bottom: 1vh !important;
     }
     .main-navigation ul ul li:last-child {
         margin-bottom: 0;
     }
     .main-navigation ul ul li a {
         padding: 0;
+        color: var(--white-color);
+    }
+    .main-navigation ul ul:before {
+        display: none;
+    }
+    .banner-btn {
+        margin-top: 40px;
+    }
+    .about-image.back-img {
+        width: 100%;
+        height: 500px;
+        margin-top: 200px;
+        border-radius: 30px;
+        box-shadow: 0 0 30px rgb(0 0 0 / 15%);
+    }
+    .about-content {
+        position: relative;
+        width: 100%;
+        left: auto;
+        top: 0;
+        margin-top: 40px;
+        background: transparent;
+        padding: 0;
+    }
+    .owner {
+        padding-top: 80px;
+    }
+    .owner-info {
+        padding-top: 80px;
+    }
+    .testimonial-info {
+        padding-right: 0;
+        text-align: center;
+    }
+    .testimonial .service-btn .sec-btn {
+        margin-top: 10px;
+    }
+    .testimonial-info:before {
+        display: none;
+    }
+    .testimonial-content {
+        text-align: center;
+        padding-left: 0;
+    }
+    .slick-slider-nav {
+        margin-top: 20px;
+        text-align: center;
+        padding: 0;
+    }
+    .testimonial {
+        padding: 80px 0;
+    }
+    .service {
+        clip-path: ellipse(calc(100% + 500px)100% at 50% 100%);
+    }
+    .service-info {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+    .dropdown-tabbing {
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+        height: 90px;
+        overflow-y: hidden;
+    }
+    .dropdown-tabbing::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+    }
+    .service-menu ul li span {
+        display: block;
+    }
+    .service-menu ul li {
+        padding: 0 20px;
+    }
+    .service-menu {
+        margin-bottom: 60px;
     }
     .footer-bottom-text,
     .copy-right,
@@ -3929,9 +4141,44 @@ a.prev.page-numbers {
     .footer-bottom-link {
         margin: 15px 0;
     }
+    .social-box {
+        margin-bottom: 40px;
+    }
+    .footer-contact-detail {
+        margin-top: 50px;
+    }
+    .footer-top {
+        padding: 80px 0;
+    }
+    .cta-btn {
+        top: auto;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0) rotate(0);
+    }
 }
 
 @media screen and (max-width: 767px) {
+    a.sec-btn+.sec-btn {
+        margin: 0;
+        margin-top: 30px;
+    }
+    .banner-btn .sec-btn {
+        width: 80%;
+    }
+    .owner {
+        padding-top: 60px;
+        padding-bottom: 140px;
+    }
+    .service {
+        padding: 60px 0;
+    }
+    .footer-top {
+        padding: 60px 0;
+    }
+    .footer-info {
+        width: 100%;
+    }
     .comment-form p.comment-form-author,
     .comment-form p.comment-form-email {
         width: 100%;
@@ -3946,6 +4193,26 @@ a.prev.page-numbers {
 }
 
 @media screen and (max-width: 575px) {
+    .h1-title {
+        font-size: 45px;
+        line-height: 55px;
+    }
+    .main-logo {
+        width: 240px;
+    }
+    .banner-sec {
+        padding: 220px 0 150px 0;
+    }
+    .about-image.back-img {
+        height: 400px;
+        margin-top: 180px;
+    }
+    .owner-img.back-img {
+        height: 400px;
+    }
+    .footer-branding {
+        width: 250px;
+    }
     .thank-text {
         padding-top: 80px;
     }
@@ -3977,11 +4244,54 @@ a.prev.page-numbers {
     }
 }
 
+@media screen and (max-width: 480px) {
+    .main-logo {
+        width: 200px;
+        top: 20px;
+    }
+    .h1-title span {
+        display: initial;
+    }
+    .h1-title {
+        font-size: 35px;
+        line-height: 45px;
+        margin-bottom: 15px;
+    }
+    .banner-sec {
+        clip-path: ellipse(calc(100% + 200px) 100% at 50% 0%);
+    }
+    .service-img .back-img {
+        height: 380px;
+    }
+    .footer-branding {
+        width: 200px;
+    }
+}
+
 @media screen and (max-width: 400px) {
     .container,
     .container-fluid,
     .site-header .container {
         padding: 0 15px;
+    }
+    .header-call {
+        left: 15px;
+    }
+    .main-logo {
+        width: 170px;
+    }
+    .site-header:before {
+        height: 80px;
+    }
+    .banner-sec {
+        padding: 190px 0 100px;
+    }
+    .about-image.back-img,
+    .owner-img.back-img {
+        height: 320px;
+    }
+    .career {
+        clip-path: ellipse(calc(100% + 100px)100% at 50% 100%);
     }
     .modal-dialog {
         width: calc(100vw - 30px);

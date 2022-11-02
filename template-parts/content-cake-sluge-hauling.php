@@ -29,6 +29,58 @@
         </div>
     </div>
 </section>
+<?php
+$hauling_list = get_field('hauling_sub_services_list');
+if(!empty($hauling_list)):
+?>
+    <section class="service-page-list">
+        <div class="container">
+            <div class="row">
+                <?php
+                if(have_rows('hauling_sub_services_list')):
+                    while(have_rows('hauling_sub_services_list')): the_row();
+                    $hauling_sub_service_image = get_sub_field('hauling_sub_services_list_image');
+                    $hauling_sub_service_title = get_sub_field('hauling_sub_services_list_title');
+                    $hauling_sub_service_content = get_sub_field('hauling_sub_services_list_content');
+                ?>
+                    <div class="col-lg-6">
+                        <div class="service-page-box">
+                            <?php
+                            if(!empty($hauling_sub_service_image)):
+                            ?>
+                                <div class="service-box-img back-img" style="background-image: url('<?php echo $hauling_sub_service_image; ?>');">
+                                </div>
+                            <?php
+                            endif;
+                            ?>
+                            <div class="service-box-info">
+                                <?php
+                                if(!empty($hauling_sub_service_title )):
+                                ?>
+                                    <h2><?php echo $hauling_sub_service_title;  ?></h2>
+                                <?php
+                                endif;
+                                ?>
+                                <?php
+                                if(!empty($hauling_sub_service_content)): 
+                                ?>
+                                    <?php echo $hauling_sub_service_content;  ?>
+                                <?php
+                                endif;
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                    endwhile;
+                endif;
+                ?>
+            </div>
+        </div>
+    </section>
+<?php
+endif;
+?>
 <!-- Gallery Start -->
 <section class="gallery">
     <div class="gallery-slider gallery-box">

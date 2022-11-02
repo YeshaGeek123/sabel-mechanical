@@ -42,6 +42,14 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="client-list-box">
+                                    <?php
+                                    $equipment_main_title1 = get_field('equipment_main_title');
+                                    if(!empty($equipment_main_title1)):
+                                    ?>
+                                        <div class="list-title"><p><?php echo $equipment_main_title1; ?></p></div>
+                                    <?php
+                                    endif;
+                                    ?>
                                     <div class="client-list">
                                         <ul>
                                             <?php
@@ -71,7 +79,8 @@
 
 <?php
 $equipment_points_list = get_field('equipment_points');
-if(!empty($equipment_content)):
+if(!empty($equipment_content))
+{
     if(!empty($equipment_points_list)):
     ?>
     <section class="our-client-list">
@@ -80,10 +89,10 @@ if(!empty($equipment_content)):
                 <div class="col-lg-12">
                     <div class="client-list-box">
                         <?php
-                        $equipment_main_title = get_field('equipment_main_title');
-                        if(!empty($equipment_main_title)):
+                        $equipment_main_title2 = get_field('equipment_main_title');
+                        if(!empty($equipment_main_title2)):
                         ?>
-                            <div class="list-title"><p><?php echo $equipment_main_title; ?></p></div>
+                            <div class="list-title"><p><?php echo $equipment_main_title2; ?></p></div>
                         <?php
                         endif;
                         ?>
@@ -107,23 +116,26 @@ if(!empty($equipment_content)):
         </div>
     </section>
     <?php
-    endif;
-endif;
+    endif;   
+}
     ?>
 
 <section class="gallery-list">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="gallery-list-text">
-                    <p>See the gallery below for examples of the work we’ve done.</p>
+            <?php
+            if(!empty(get_field('equipment_sub_service_note'))):
+            ?>
+                <div class="col-lg-12">
+                    <div class="gallery-list-text">
+                        <p><?php echo get_field('equipment_sub_service_note'); ?></p>
+                    </div>
                 </div>
-            </div>
-
+            <?php
+            endif;
+            ?>
             <?php
             $equipment_sub_services_list = get_field('equipment_sub_services_list');
-            $upload_dir = wp_upload_dir();
-            $baseurl= $upload_dir['baseurl'];
             if(!empty($equipment_sub_services_list)):
                 if(have_rows('equipment_sub_services_list')):
                     while(have_rows('equipment_sub_services_list')): the_row();
@@ -141,7 +153,7 @@ endif;
                             <?php
                             else:
                             ?>
-                            <div class="service-box-img back-img" style="background-image: url('<?php echo $baseurl; ?>/2022/11/Equipment-Replacement.png');">
+                            <div class="service-box-img back-img">
                             </div>
                             <?php
                             endif;
@@ -150,7 +162,7 @@ endif;
                                 <?php
                                 if(!empty($equipment_sub_service_title)):
                                 ?>
-                                    <h2 class="h2-title"><?php echo $equipment_sub_service_title; ?></h2>
+                                    <h2><?php echo $equipment_sub_service_title; ?></h2>
                                 <?php
                                 endif;
                                 ?>
@@ -172,4 +184,30 @@ endif;
         </div>
     </div>
 </section>
+<!-- Gallery Start -->
+<section class="gallery">
+    <div class="gallery-slider gallery-box">
+        <?php
+        $equipment_gallery_images= get_field('equipment_gallery_images');
+        if (isset($equipment_gallery_images) && !empty($equipment_gallery_images)) :
+            $counter = 1;
+            foreach ($equipment_gallery_images as $key => $image) :
+        ?>
+            <div class="gallery-img">
+                <a href="<?php echo $image['url']; ?>" title="Gallery Image <?php echo $counter++; ?>" data-fancybox="gallery-images" >
+                    <div class="back-img" style="background-image:url('<?php echo $image['url']; ?>');"> </div>
+                </a>
+            </div>
+        <?php
+            endforeach;
+        endif;
+        ?>
+       
+    </div>
+</section>
+<!-- Gallery End -->
 
+<?php
+	get_template_part( 'template-parts/content', 'career' );		
+?>
+ 

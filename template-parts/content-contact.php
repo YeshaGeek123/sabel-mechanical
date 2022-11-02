@@ -6,14 +6,14 @@ global $phone,$phone_link;
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-            <h2 class="h2-title">Contact Us</h2>
+            <h2 class="h2-title"><?php the_field('contact_us_title'); ?></h2>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-5 offset-lg-1">
 
                 <div class="service-page-info">
-                    <p>Sabel Mechanical LLC provides a broad range of mechanical services to industrial and commercial clients across Wisconsin, Illinois, and Michigan. Get in touch today!</p>
+                   <?php the_field('contact_us_content'); ?>
                 </div>
                 <div class="footer-contact-detail">
 						<div class="social-box">

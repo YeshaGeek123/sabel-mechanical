@@ -53,7 +53,7 @@ if(!empty($list)):
                                 <?php
                                 if(!empty($sub_service_title )):
                                 ?>
-                                    <h2 class="h2-title"><?php echo $sub_service_title;  ?></h2>
+                                    <h2><?php echo $sub_service_title;  ?></h2>
                                 <?php
                                 endif;
                                 ?>

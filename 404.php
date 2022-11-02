@@ -23,11 +23,11 @@ get_header();
 
 </section>
 
-<div class="inner-page-text">
+<div class="inner-page-text error-404">
     <div class="container">
         <div class="row">
             <div class="col-12">
-            <img width="1200" height="937" src="<?php echo home_url(); ?>wp-content/themes/sabel-mechanical/assets/images/404.png" alt="404 Not Found!">
+            <img width="500" height="373" src="<?php echo home_url(); ?>/wp-content/themes/sabel-mechanical/assets/images/404.png" alt="404 Not Found!">
             </div>
         </div>
     </div>

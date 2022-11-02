@@ -17,7 +17,7 @@ global $phone,$phone_link;
 	<div class="footer-top back-img" style="background-image:url('<?php the_field('footer_background_image','options'); ?>');">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-xl-6 col-lg-6">
 					<div class="footer-info">
 						<div class="footer-branding">
 							<a href="<?php echo home_url(); ?>" title="Sabel Mechanical"><img src="<?php the_field('logo','options'); ?>" alt="Sabel Mechanical" width="315" height="152"></a>
@@ -30,7 +30,7 @@ global $phone,$phone_link;
 							$brand_image = get_sub_field('brand_logo_image','options');
 								if(!empty($brand_image)):
 						?>
-								<a href="#" title="bbb-logo"><img src="<?php echo $brand_image; ?>" alt="Sabel Mechanical" width="59" height="44"></a>
+								<a href="<?php the_sub_field('brand_link','options'); ?>" title="<?php the_sub_field('brand_name','options'); ?>"><img src="<?php echo $brand_image; ?>" alt="<?php the_sub_field('brand_name','options'); ?>" width="59" height="44"></a>
 						<?php
 								endif;
 							endwhile;
@@ -40,7 +40,7 @@ global $phone,$phone_link;
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-5 offset-lg-1">
+				<div class="col-xl-5 col-lg-6 offset-xl-1">
 					<div class="footer-contact-detail">
 						<div class="social-box">
 							<div class="social-icon">
@@ -98,7 +98,7 @@ global $phone,$phone_link;
 							</ul>
 						</div>
 						<div class="footer-other-link">
-							<p>Website Design, SEO, & Online Marketing by<a href="https://www.dotcomdesign.com" target="_blank" title="Dotcom Design" class="dotcom-link"> Dotcom Design</a></p>
+							<p>Website Design, SEO, & Online Marketing with <span><i class="fa fa-heart" aria-hidden="true"></i></span> by<a href="https://www.dotcomdesign.com" target="_blank" title="Dotcom Design" class="dotcom-link"> Dotcom Design</a></p>
 						</div>
 					</div>
 				</div>
@@ -106,6 +106,24 @@ global $phone,$phone_link;
 		</div>
 	</div>
 	</footer><!-- #colophon -->
+		<!-- Career -->
+		<div class="modal common-popup career-popup" id="get_an_career_modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="popup-title">
+						<h3 class="h3-title">Apply Now</h3>
+						<button type="button" class="close close-popup" data-dismiss="modal"><i class="fas fa-times" aria-hidden="true"></i></button>
+					</div>
+					<div class="common-popup-overflow">
+						<div class="common-popup-text" data-simplebar>
+							<div class="contact-form">
+								<?php echo do_shortcode('[contact-form-7 id="292" title="Career Form"]'); ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- CTA  Button Start -->
 		<div class="cta-btn">
 			<span>Call now</span>
@@ -114,12 +132,11 @@ global $phone,$phone_link;
 					<i class="fas fa-phone-alt"></i>
 					</div>
 					<div class="social-info">
-						<a href="tel:++<?php echo $phone_link; ?>" title="<?php echo $phone; ?>" ><span class="callus"><?php echo $phone; ?></span></a>
+						<a href="tel:+<?php echo $phone_link; ?>" title="<?php echo $phone; ?>" ><span class="callus"><?php echo $phone; ?></span></a>
 					</div>
-
-			</div>
-    </div>
-    <!-- CTA  Button Start -->
+				</div>
+    	</div>
+    	<!-- CTA  Button End -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

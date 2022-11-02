@@ -11,7 +11,7 @@ global $phone,$phone_link;
                     <h4 class="h4-title"><?php the_field('home_banner_sub_title'); ?></h4>
                     <div class="banner-btn">
                         <a href="tel:+<?php echo $phone_link; ?>" title="<?php echo $phone; ?>"  class="sec-btn callus">Call <span class="callus"><?php echo $phone; ?></span></a>
-                        <a href="javascript:void(0)" title="Contact Us"  class="sec-btn">Contact us</a>
+                        <a href="<?php the_permalink(14); ?>" title="Contact Us"  class="sec-btn">Contact us</a>
                     </div>
                 </div>
             </div>
@@ -74,9 +74,6 @@ global $phone,$phone_link;
         <div class="row">
             <div class="col-lg-12">
                 <div class="service-menu custom-dot-slider">
-                    <ul class="dropdown-tabbing">
-                        
-                    </ul>
                 </div>
             </div>
         </div>
@@ -138,9 +135,9 @@ global $phone,$phone_link;
                 endwhile;
             endif;
             ?>
-            
+
         </div>
-        
+
     </div>
 </section>
 <!-- service sec end -->
@@ -149,35 +146,41 @@ global $phone,$phone_link;
 <section class="testimonial">
     <div class="container">
         <div class="row">
-            <div class="col-xl-5 col-lg-5">
+            <div class="col-xl-5 col-lg-6">
                 <div class="testimonial-info">
                     <h2 class="h2-title"><?php the_field('home_testimonial_title'); ?></h2>
                     <?php the_field('home_testimonial_content'); ?>
                     <div class="service-btn">
-                        <a href="#" title="leave a review" class="sec-btn">leave a review </a>
+                        <a href="<?php the_field('home_testimonial_review_link'); ?>" target="_blank" title="Leave a review" class="sec-btn">leave a review </a>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4">
+            <div class="col-xl-4 col-lg-6">
                 <div class="testimonial-slider">
-                <?php
-                    $testimonial_list = get_posts(array(
-                        'post_type' => 'testimonials',
-                        'post_status' => 'publish',
-                        'order'          => 'ASC',
-                        'posts_per_page' => -1
-                    ));
-                    if ($testimonial_list) :
-                        foreach ($testimonial_list as $testimonial) :
-                ?>
-                        <div class="testimonial-content">
-                            <p><?php echo $testimonial->post_content; ?></p>
-                            <span><?php echo $testimonial->post_title; ?></span>
-                        </div>
-                <?php
-                        endforeach;
-                    endif;
-                ?>
+                    <?php
+                        $testimonial_list = get_posts(array(
+                            'post_type' => 'testimonials',
+                            'post_status' => 'publish',
+                            'order'          => 'ASC',
+                            'posts_per_page' => -1
+                        ));
+                        if ($testimonial_list) :
+                            foreach ($testimonial_list as $testimonial) :
+                    ?>
+                            <div class="testimonial-content">
+                                <p><?php echo $testimonial->post_content; ?></p>
+                                <span><?php echo $testimonial->post_title; ?></span>
+                            </div>
+                    <?php
+                            endforeach;
+                        endif;
+                    ?>
+                </div>
+                <div class="slick-slider-nav">
+                    <button class="prevs-arrow slick-arrow"></button>
+                    <div class="slick-navigation"></div>
+                    <button class="nexts-arrow slick-arrow"></button>
+
                 </div>
             </div>
         </div>
@@ -203,12 +206,12 @@ global $phone,$phone_link;
             endforeach;
         endif;
         ?>
-       
+
     </div>
 </section>
 <!-- Gallery End -->
 
 <?php
-	get_template_part( 'template-parts/content', 'career' );		
+	get_template_part( 'template-parts/content', 'career' );
 ?>
 

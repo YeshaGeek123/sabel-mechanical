@@ -8,7 +8,7 @@
                     </div>
                     <p><?php the_field('home_career_sub_title',6); ?><p>                    
                     <div class="service-btn">
-                        <a href="#" title="apply now" class="sec-btn">Apply Now</a>
+                        <a href="javascript:void(0);" data-toggle="modal" data-target="#get_an_career_modal" title="Apply Now" class="sec-btn" title="apply now" class="sec-btn">Apply Now</a>
                     </div>
                 </div>
             </div>
