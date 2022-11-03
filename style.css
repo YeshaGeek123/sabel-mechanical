@@ -2338,8 +2338,7 @@ a.sec-btn+.sec-btn:hover {
     margin-top: 20px;
 }
 
-
-/* .h2-title:before {
+.h2-title:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -2349,7 +2348,11 @@ a.sec-btn+.sec-btn:hover {
     z-index: -1;
     left: 50%;
     transform: translate(-50%);
-} */
+}
+
+.service-page-box .h2-title:before {
+    display: none;
+}
 
 mark {
     color: inherit;
@@ -2700,7 +2703,7 @@ ul.dropdown-tabbing {
 }
 
 .social-box {
-    display: flex;
+    display: flex !important;
     margin-bottom: 50px;
 }
 
@@ -4231,6 +4234,10 @@ a.prev.page-numbers {
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 0) rotate(0);
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .career {
         padding: 80px 0;

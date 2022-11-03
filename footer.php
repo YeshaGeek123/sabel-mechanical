@@ -127,7 +127,7 @@ global $phone,$phone_link;
 		<!-- CTA  Button Start -->
 		<div class="cta-btn">
 			<span>Call now</span>
-			<div class="social-box">
+			<div class="social-box for-des">
 				<div class="social-icon">
 					<i class="fas fa-phone-alt"></i>
 					</div>
