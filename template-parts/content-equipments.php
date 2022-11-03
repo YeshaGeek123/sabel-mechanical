@@ -33,7 +33,7 @@
                 <?php
                 if(!empty($equipment_content)):
                 ?>
-                    <p><?php echo $equipment_content; ?></p>
+                    <?php echo $equipment_content; ?>
                 <?php
                 else:
                 ?>
@@ -162,7 +162,7 @@ if(!empty($equipment_content))
                                 <?php
                                 if(!empty($equipment_sub_service_title)):
                                 ?>
-                                    <h2><?php echo $equipment_sub_service_title; ?></h2>
+                                    <h2 class="h2-title"><mark><?php echo $equipment_sub_service_title; ?></mark></h2>
                                 <?php
                                 endif;
                                 ?>

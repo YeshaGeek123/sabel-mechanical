@@ -1135,7 +1135,7 @@ select::-ms-expand {
 .select2-container--default .select2-selection--single .select2-selection__rendered,
 select {
     width: 100%;
-    height: 46px;
+    height: 60px;
     border: none;
     outline: none !important;
     padding: 0 15px;
@@ -2240,7 +2240,7 @@ button.close:hover {
 
 .banner-sec {
     position: relative;
-    padding: 400px 0 200px 0;
+    padding: 400px 0 240px 0;
     clip-path: ellipse(calc(100% - 50px) 100% at 50% 0%);
     z-index: 1;
 }
@@ -2272,7 +2272,7 @@ button.close:hover {
 }
 
 .banner-btn {
-    margin-top: 60px;
+    margin-top: 65px;
 }
 
 a.sec-btn+.sec-btn {
@@ -2299,7 +2299,7 @@ a.sec-btn+.sec-btn:hover {
 
 .about-image.back-img {
     position: relative;
-    height: 1010px;
+    height: 1040px;
     width: 60vw;
     float: right;
 }
@@ -2315,9 +2315,9 @@ a.sec-btn+.sec-btn:hover {
 .about-content {
     position: absolute;
     background-color: var(--white-color);
-    top: 230px;
+    top: 275px;
     left: -100px;
-    padding: 70px;
+    padding: 80px;
     border-radius: 30px;
     width: calc(100% + 170px);
 }
@@ -2338,7 +2338,8 @@ a.sec-btn+.sec-btn:hover {
     margin-top: 20px;
 }
 
-.h2-title:before {
+
+/* .h2-title:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -2348,6 +2349,22 @@ a.sec-btn+.sec-btn:hover {
     z-index: -1;
     left: 50%;
     transform: translate(-50%);
+} */
+
+mark {
+    color: inherit;
+    background: 0 0;
+    padding: 0 10px;
+    background-image: linear-gradient(var(--bg-color), var(--bg-color));
+    background-repeat: no-repeat;
+    background-size: 100% 40px;
+    background-position: 0 20px;
+    position: relative;
+}
+
+.service-box-info mark {
+    background-size: 100% 12px;
+    background-position: 0 19px;
 }
 
 .owner-img.back-img {
@@ -2393,7 +2410,7 @@ a.sec-btn+.sec-btn:hover {
 
 .service {
     position: relative;
-    padding: 123px 0;
+    padding: 165px 0 215px 0;
     background-color: var(--dark-color);
     clip-path: ellipse(calc(100% + 50px)100% at 50% 100%);
     margin-top: -110px;
@@ -2457,7 +2474,7 @@ a.sec-btn+.sec-btn:hover {
 
 .service-menu {
     margin-top: 40px;
-    margin-bottom: 110px;
+    margin-bottom: 120px;
 }
 
 .service-btn .sec-btn {
@@ -2469,7 +2486,7 @@ a.sec-btn+.sec-btn:hover {
 }
 
 .service-text {
-    padding-top: 15px;
+    padding-top: 20px;
 }
 
 .service-btn .sec-btn:hover {
@@ -2510,12 +2527,12 @@ ul.dropdown-tabbing {
 .testimonial .service-btn .sec-btn {
     color: var(--primary-color);
     border-color: var(--primary-color);
-    margin-top: 67px;
+    margin-top: 75px;
 }
 
 .testimonial {
     position: relative;
-    padding: 160px 0;
+    padding: 170px 0;
     background-color: var(--bg-color);
 }
 
@@ -2613,7 +2630,7 @@ ul.dropdown-tabbing {
 
 .career {
     position: relative;
-    padding: 100px 0;
+    padding: 125px 0 110px 0;
     clip-path: ellipse(calc(100% + 50px)100% at 50% 100%);
     margin-top: -65px;
 }
@@ -2630,8 +2647,8 @@ ul.dropdown-tabbing {
 
 .career-info p {
     color: var(--white-color);
-    margin-top: 15px;
-    margin-bottom: 35px;
+    margin-top: 20px;
+    margin-bottom: 37px;
 }
 
 .career .service-btn .sec-btn:hover,
@@ -2684,7 +2701,7 @@ ul.dropdown-tabbing {
 
 .social-box {
     display: flex;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .social-icon {
@@ -2872,8 +2889,8 @@ span.title {
 /*==========inner pages  CSS start==========*/
 
 .inner-banner {
-    padding-top: 245px;
-    padding-bottom: 80px;
+    padding-top: 290px;
+    padding-bottom: 112px;
     background-color: #F7F7F7;
 }
 
@@ -2891,6 +2908,10 @@ span.title {
     position: relative;
     margin-top: 20px;
     padding: 0 100px;
+}
+
+.page-template-template-cake-sluge-hauling .service-page-info {
+    padding-right: 0;
 }
 
 .service-page-info p {
@@ -2922,9 +2943,13 @@ span.title {
     background-color: #252525;
 }
 
+.equipment-offering-service .service-page-content {
+    padding-right: 80px;
+}
+
 .service-box-info {
     position: relative;
-    padding: 70px 60px;
+    padding: 70px 62px;
     text-align: center;
     background-color: var(--white-color);
     border-radius: 30px;
@@ -2944,10 +2969,15 @@ span.title {
 }
 
 .service-page-box .h2-title {
-    font-size: 25px;
+    font-size: 24px;
     line-height: 35px;
     margin-bottom: 0;
     padding: 0px;
+    width: 385px;
+}
+
+body.page-template.page-template-template-equipments.page-template-template-equipments-php.page .service-page-box .h2-title {
+    width: 100%;
 }
 
 .service-box-info p {
@@ -3014,7 +3044,7 @@ section.our-client-list.equipment-offering-list .client-list-box:before {
 .list-title {
     width: 470px;
     max-width: 100%;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 60px auto;
 }
 
 .client-list ul li,
@@ -3041,7 +3071,7 @@ section.our-client-list.equipment-offering-list .client-list-box:before {
 }
 
 .gallery-list-text {
-    margin: 50px 0 105px 0;
+    margin: 50px 0 110px 0;
 }
 
 .gallery-list .service-box-info {
@@ -3070,7 +3100,7 @@ section.inner-banner.contact-page-detail .service-page-info {
 
 .contact-page-detail .footer-contact-detail {
     margin-left: 0;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .contact-page-detail .social-info p,
@@ -3083,7 +3113,7 @@ section.inner-banner.contact-page-detail .service-page-info {
     color: var(--dark-color);
     padding: 0;
     padding-left: 100px;
-    margin-bottom: 70px;
+    margin-bottom: 75px;
 }
 
 .contact-page-detail .h2-title:before {
@@ -3823,6 +3853,15 @@ a.prev.page-numbers {
     .footer-contact-detail {
         margin-left: 0;
     }
+    .service-page-info {
+        padding-right: 50px;
+    }
+    .service-page-img.back-img {
+        margin-left: 0;
+    }
+    section.inner-banner.contact-page-detail .service-page-info {
+        padding: 0;
+    }
 }
 
 @media screen and (max-width: 1199px) {
@@ -3845,6 +3884,31 @@ a.prev.page-numbers {
     }
     .gallery-img .back-img {
         height: 350px;
+    }
+    .footer-branding {
+        width: 270px;
+    }
+    .service-page-info {
+        padding: 0;
+    }
+    .service-page-info:before {
+        left: 0;
+    }
+    .client-list-box {
+        padding: 50px;
+    }
+    .gallery-list-text {
+        margin-bottom: 50px;
+    }
+    .page-template-template-cake-sluge-hauling .service-page-content {
+        padding: 0;
+    }
+    .contact-page-detail .h2-title {
+        padding-left: 75px;
+        margin-bottom: 60px;
+    }
+    .contact-form {
+        margin-left: 0;
     }
 }
 
@@ -4057,13 +4121,19 @@ a.prev.page-numbers {
     .main-navigation ul ul:before {
         display: none;
     }
+    .main-navigation ul ul li a:hover {
+        color: var(--dark-color);
+        transform: scale(1.1);
+    }
     .banner-btn {
         margin-top: 40px;
     }
+    .about {
+        padding-top: 210px;
+    }
     .about-image.back-img {
         width: 100%;
-        height: 500px;
-        margin-top: 200px;
+        height: 450px;
         border-radius: 30px;
         box-shadow: 0 0 30px rgb(0 0 0 / 15%);
     }
@@ -4076,11 +4146,15 @@ a.prev.page-numbers {
         background: transparent;
         padding: 0;
     }
+    .service-box .h3-title {
+        width: 100%;
+    }
     .owner {
-        padding-top: 80px;
+        padding-top: 60px;
+        padding-bottom: 130px;
     }
     .owner-info {
-        padding-top: 80px;
+        padding-top: 50px;
     }
     .testimonial-info {
         padding-right: 0;
@@ -4105,7 +4179,9 @@ a.prev.page-numbers {
         padding: 80px 0;
     }
     .service {
+        padding-top: 80px;
         clip-path: ellipse(calc(100% + 500px)100% at 50% 100%);
+        padding-bottom: 60px;
     }
     .service-info {
         margin-top: 0;
@@ -4129,7 +4205,7 @@ a.prev.page-numbers {
         padding: 0 20px;
     }
     .service-menu {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
     .footer-bottom-text,
     .copy-right,
@@ -4156,6 +4232,49 @@ a.prev.page-numbers {
         left: 50%;
         transform: translate(-50%, 0) rotate(0);
     }
+    .career {
+        padding: 80px 0;
+    }
+    .footer-info {
+        width: 100%;
+    }
+    .inner-banner.banner-sec {
+        padding-top: 230px;
+        padding-bottom: 90px;
+    }
+    .service-page-detail {
+        padding-bottom: 63px;
+    }
+    .service-page-content {
+        padding-right: 0;
+    }
+    .client-list-box:before {
+        display: none;
+    }
+    .client-list ul {
+        column-count: 2;
+        column-gap: 30px;
+    }
+    .gallery-list {
+        padding-bottom: 50px;
+    }
+    section.our-client-list.equipment-offering-list .container {
+        padding: 0;
+    }
+    .service-page-box .h2-title {
+        width: 100%;
+    }
+    .contact-page-detail .h2-title {
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+    .contact-page-detail .footer-contact-detail {
+        margin-top: 20px;
+        margin-bottom: 100px;
+    }
+    .service-img {
+        margin: 0 10px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -4167,8 +4286,8 @@ a.prev.page-numbers {
         width: 80%;
     }
     .owner {
-        padding-top: 60px;
-        padding-bottom: 140px;
+        padding-top: 40px;
+        padding-bottom: 100px;
     }
     .service {
         padding: 60px 0;
@@ -4178,6 +4297,31 @@ a.prev.page-numbers {
     }
     .footer-info {
         width: 100%;
+    }
+    .banner-sec {
+        padding-top: 250px;
+    }
+    .about {
+        padding-top: 190px;
+    }
+    .owner-info {
+        padding-top: 40px;
+    }
+    .testimonial {
+        padding: 60px 0;
+    }
+    .career {
+        padding: 60px 0;
+    }
+    .inner-banner .h1-title {
+        font-size: 43px;
+    }
+    .service-page-detail {
+        padding-top: 160px;
+        padding-bottom: 40px;
+    }
+    .service-page-list {
+        padding-bottom: 30px;
     }
     .comment-form p.comment-form-author,
     .comment-form p.comment-form-email {
@@ -4189,6 +4333,9 @@ a.prev.page-numbers {
     .modal-dialog {
         max-width: unset;
         width: calc(100vw - 60px);
+    }
+    .client-list-box {
+        padding: 35px;
     }
 }
 
@@ -4204,14 +4351,32 @@ a.prev.page-numbers {
         padding: 220px 0 150px 0;
     }
     .about-image.back-img {
-        height: 400px;
-        margin-top: 180px;
+        height: 320px;
     }
     .owner-img.back-img {
-        height: 400px;
+        height: 320px;
     }
     .footer-branding {
         width: 250px;
+    }
+    .service-img .back-img {
+        height: 320px;
+    }
+    .service-box-info {
+        padding: 30px;
+    }
+    .client-list ul {
+        column-count: 1;
+    }
+    .client-list-box {
+        padding: 30px;
+    }
+    .list-title p,
+    .gallery-list-text p {
+        text-align: left;
+    }
+    .contact-form {
+        padding: 30px;
     }
     .thank-text {
         padding-top: 80px;
@@ -4260,11 +4425,32 @@ a.prev.page-numbers {
     .banner-sec {
         clip-path: ellipse(calc(100% + 200px) 100% at 50% 0%);
     }
-    .service-img .back-img {
-        height: 380px;
-    }
     .footer-branding {
         width: 200px;
+    }
+    .inner-banner .h1-title {
+        font-size: 35px;
+        line-height: 45px;
+    }
+    .service-box-img {
+        height: 250px;
+    }
+    .service-box-info {
+        padding: 30px;
+    }
+    .service-box-info ul {
+        column-count: 1;
+        padding-left: 20px;
+    }
+    .service-page-box .h2-title {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .service-page-img.back-img {
+        height: 250px;
+    }
+    .page-template.page-template-template-contact.page-template-template-contact-php .inner-banner {
+        padding-top: 180px;
     }
 }
 
@@ -4317,12 +4503,25 @@ a.prev.page-numbers {
     .form-element i {
         right: 10px;
     }
+    .inner-banner.banner-sec {
+        padding: 180px 0 100px 0;
+    }
     .popup-title {
         padding: 10px 65px 10px 15px;
     }
     .common-popup-text {
         padding: 20px 15px !important;
         max-height: 75vh;
+    }
+    .form-input {
+        height: 40px;
+    }
+    button.sec-btn.sm-btn {
+        width: 160px;
+        height: 40px;
+    }
+    .service-box .h3-title {
+        font-size: 20px;
     }
 }
 

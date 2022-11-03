@@ -57,7 +57,7 @@ if(!empty($hauling_list)):
                                 <?php
                                 if(!empty($hauling_sub_service_title )):
                                 ?>
-                                    <h2><?php echo $hauling_sub_service_title;  ?></h2>
+                                    <h2 class="h2-title"><mark><?php echo $hauling_sub_service_title;  ?></mark></h2>
                                 <?php
                                 endif;
                                 ?>

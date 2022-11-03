@@ -30,7 +30,7 @@ global $phone,$phone_link;
 							$brand_image = get_sub_field('brand_logo_image','options');
 								if(!empty($brand_image)):
 						?>
-								<a href="<?php the_sub_field('brand_link','options'); ?>" title="<?php the_sub_field('brand_name','options'); ?>"><img src="<?php echo $brand_image; ?>" alt="<?php the_sub_field('brand_name','options'); ?>" width="59" height="44"></a>
+								<a href="<?php the_sub_field('brand_link','options'); ?>" target="_blank" title="<?php the_sub_field('brand_name','options'); ?>"><img src="<?php echo $brand_image; ?>" alt="<?php the_sub_field('brand_name','options'); ?>" width="59" height="44"></a>
 						<?php
 								endif;
 							endwhile;

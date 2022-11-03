@@ -136,7 +136,7 @@ jQuery(document).ready(function($) {
     });
 
     /* Mobile Menu JS */
-    jQuery("#menu-item-20 a").first().attr('href', 'javascript:void(0);');
+    //jQuery("#menu-item-20 a").first().attr('href', 'javascript:void(0);');
     jQuery("#main-menu .menu-item a").click(function() {
         jQuery("#site-navigation").removeClass("toggled");
     });
@@ -192,14 +192,8 @@ jQuery(window).on('load resize', function() {
             jQuery(".sub-menu").css('display', 'none');
         });
 
-        // /* Scroll To Top JS */
-        // jQuery(window).scroll(function() {
-        //     if (jQuery(this).scrollTop() > 100) {
-        //         jQuery('.cta-btn').fadeIn();
-        //     } else {
-        //         jQuery('.cta-btn').fadeOut();
-        //     }
-        // });
-
+    }
+    else {
+        jQuery("#menu-item-20 a").first().attr('href', 'http://192.168.1.13/sabel-mechanical/#service');
     }
 });
