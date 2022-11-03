@@ -2129,7 +2129,7 @@ button.close:hover {
     left: 0;
     width: 100%;
     height: 152px;
-    background-image: url(http://192.168.1.13/sabel-mechanical/wp-content/uploads/2022/10/LOGO.png);
+    background-image: url(../../uploads/2022/11/LOGO.png);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -4274,6 +4274,9 @@ a.prev.page-numbers {
     }
     .service-img {
         margin: 0 10px;
+    }
+    .equipment-offering-service .service-page-content {
+        padding: 0;
     }
 }
 
